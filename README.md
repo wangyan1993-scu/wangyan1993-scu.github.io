@@ -1,6 +1,6 @@
 # Yan Wang Personal Homepage
 
-Static GitHub Pages site for Yan Wang, hosted from `wangyan.github.io`.
+Static GitHub Pages site for Yan Wang, hosted at <https://wangyan1993-scu.github.io/>.
 
 The homepage contains three sections:
 
