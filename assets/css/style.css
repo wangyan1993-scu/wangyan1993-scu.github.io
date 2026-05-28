@@ -1,0 +1,278 @@
+:root {
+  --bg: #f7f7f4;
+  --paper: #ffffff;
+  --ink: #222426;
+  --muted: #60666c;
+  --line: #d9ded8;
+  --accent: #1d5d6b;
+  --accent-dark: #153f49;
+  --shadow: 0 16px 40px rgba(23, 38, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+.container {
+  width: min(940px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 56px 0 28px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  color: var(--accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 6vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+h2 {
+  margin-bottom: 22px;
+  color: var(--accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+h3 {
+  margin: 34px 0 14px;
+  color: var(--accent-dark);
+  font-size: 1.05rem;
+  letter-spacing: 0;
+}
+
+.subtitle {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.site-nav a {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 12px;
+  background: #fbfbf9;
+  color: var(--accent-dark);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.section {
+  margin: 34px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 34px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  scroll-margin-top: 24px;
+}
+
+.profile-list {
+  display: grid;
+  gap: 0;
+  margin: 26px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.profile-list div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.profile-list dt {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.profile-list dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.news-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+.news-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-list time {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.publication-list {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.publication-list li::marker {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.publication-list strong,
+.publication-list span,
+.publication-list cite {
+  display: block;
+}
+
+.publication-list strong {
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.publication-list span {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.publication-list cite {
+  margin-top: 2px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.site-footer {
+  padding: 18px 0 40px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    width: min(100% - 28px, 940px);
+  }
+
+  .header-inner {
+    display: block;
+    padding-top: 38px;
+  }
+
+  .site-nav {
+    margin-top: 22px;
+  }
+
+  .section {
+    padding: 24px 20px;
+  }
+
+  .profile-list div,
+  .news-list li {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 12pt;
+  }
+
+  .site-header,
+  .section {
+    box-shadow: none;
+  }
+
+  .site-nav,
+  .site-footer {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .section {
+    margin: 18pt 0;
+    border: 0;
+    padding: 0;
+  }
+}
