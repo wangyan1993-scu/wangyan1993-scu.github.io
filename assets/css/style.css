@@ -78,17 +78,17 @@ h2 {
   line-height: 1.2;
 }
 
-h3 {
-  margin: 34px 0 14px;
-  color: var(--accent-dark);
-  font-size: 1.05rem;
-  letter-spacing: 0;
-}
-
 .subtitle {
   margin-bottom: 0;
   color: var(--muted);
   font-size: 1.05rem;
+}
+
+.heading-link {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .site-nav {
@@ -151,24 +151,16 @@ h3 {
 }
 
 .news-list {
-  display: grid;
-  gap: 14px;
   margin: 0;
-  padding: 0;
-  list-style: none;
+  padding-left: 24px;
 }
 
 .news-list li {
-  display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 14px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .news-list li:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .news-list time {
@@ -177,35 +169,27 @@ h3 {
 }
 
 .publication-list {
-  display: grid;
-  gap: 18px;
   margin: 0;
   padding-left: 24px;
 }
 
+.publication-list li {
+  margin-bottom: 13px;
+}
+
+.publication-list li:last-child {
+  margin-bottom: 0;
+}
+
 .publication-list li::marker {
   color: var(--accent-dark);
-  font-weight: 700;
-}
-
-.publication-list strong,
-.publication-list span,
-.publication-list cite {
-  display: block;
-}
-
-.publication-list strong {
-  color: var(--ink);
-  line-height: 1.45;
 }
 
 .publication-list span {
-  margin-top: 4px;
-  color: var(--muted);
+  color: var(--ink);
 }
 
 .publication-list cite {
-  margin-top: 2px;
   color: var(--muted);
   font-style: italic;
 }
@@ -242,8 +226,7 @@ h3 {
     padding: 24px 20px;
   }
 
-  .profile-list div,
-  .news-list li {
+  .profile-list div {
     grid-template-columns: 1fr;
     gap: 3px;
   }
