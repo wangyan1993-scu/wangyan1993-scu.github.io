@@ -201,7 +201,7 @@ h2 {
 }
 
 .recruitment-notice {
-  margin: 0 0 24px;
+  margin: 24px 0 0;
   border-inline-start: 3px solid #963b4b;
   padding-inline-start: 16px;
   overflow-wrap: anywhere;
