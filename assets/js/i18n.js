@@ -29,30 +29,6 @@
     publicationsList: '可滚动的发表论文列表',
   };
 
-  const newsSubjects = {
-    maZDTaKrznsC: 'MerMED-FM 多模态、多疾病医学影像基础模型',
-    e5wmG9Sq2KIC: 'DualFete 半监督医学图像分割方法',
-    bEWYMUwI8FkC: 'UG-HDR 不确定性引导的高动态范围成像',
-    RHpTSmoSYBkC: '面向领域泛化的自适应医学图像分割网络',
-    r0BpntZqJG4C: 'EAUWSeg 弱监督医学图像分割方法',
-    YFjsv_pBGBYC: '跨多族群近视与非近视人群的青光眼检测',
-    NMxIlDl6LWMC: 'V2-Former 胎儿脑室增宽分割与预测方法',
-    TFP_iSt0sucC: '基于控制系统视角的测试时适应方法',
-    'ZeXyd9-uunAC': '用于多标签皮肤病变分类的自适应多模态融合',
-    hC7cP41nSMkC: 'GapMatch 半监督医学图像分割方法',
-    '-f6ydRqryjwC': '中心受累型糖尿病黄斑水肿的多模态人工智能检测',
-    qUcmZB5y_30C: '用于弱监督学习的局部极值映射',
-    mB3voiENLucC: '基于路径平坦性感知优化的单域泛化',
-    hFOr9nPyWt4C: '肺部肿瘤侵袭性的深度学习预测',
-    _kc_bZDykSQC: 'MedNAS 医学图像分析神经架构搜索方法',
-    '4TOpqqG69KYC': '基于几何对应的眼科影像多模态学习',
-    M3ejUd6NZC8C: '结合渐进评估与子种群保留的神经架构搜索',
-    QIV2ME_5wuYC: '用于领域泛化的连续解耦联合空间学习',
-    IWHjjKOFINEC: '大语言模型安全全球挑战赛 Track 1',
-    mVmsd5A6BfQC: '类别感知的测试时训练领域适应',
-    'Wp0gIr-vW9MC': '用于视网膜眼底诊断的代价敏感分布对齐',
-  };
-
   // Keep the static English document as the fallback and source for switching back.
   const textNodes = [...document.querySelectorAll('[data-i18n]')].map(element => ({
     element,
@@ -64,18 +40,6 @@
     key: element.dataset.i18nAria,
     english: element.getAttribute('aria-label'),
   }));
-  const news = [...document.querySelectorAll('.news-list li')].map(element => {
-    const link = element.querySelector('a');
-    const id = new URL(link.href).searchParams.get('citation_for_view').split(':')[1];
-    return {
-      element,
-      english: [...element.childNodes].map(node => node.cloneNode(true)),
-      link: link.cloneNode(true),
-      time: element.querySelector('time').cloneNode(true),
-      venue: element.querySelector('em')?.cloneNode(true),
-      subject: newsSubjects[id],
-    };
-  });
   const description = document.querySelector('meta[name="description"]');
   const englishDescription = description.content;
   const buttons = [...document.querySelectorAll('[data-language]')];
@@ -95,23 +59,6 @@
     }
     for (const { element, key, english } of ariaNodes) {
       element.setAttribute('aria-label', isChinese ? (chinese[key] ?? english) : english);
-    }
-    for (const item of news) {
-      if (!isChinese || !item.subject) {
-        item.element.replaceChildren(...item.english.map(node => node.cloneNode(true)));
-        continue;
-      }
-      const link = item.link.cloneNode(true);
-      link.textContent = item.subject;
-      const content = [item.time.cloneNode(true), ' 研究成果“', link, '”'];
-      if (item.venue) {
-        const venue = item.venue.cloneNode(true);
-        venue.lang = 'en';
-        content.push('发表于 ', venue, '。');
-      } else {
-        content.push('已作为 arXiv 预印本发布。');
-      }
-      item.element.replaceChildren(...content);
     }
     const subject = isChinese ? '2027 年秋季博士招生咨询' : 'Fall 2027 PhD Inquiry';
     emailLink.href = 'mailto:wangyan93@scu.edu.cn?subject=' + encodeURIComponent(subject);
