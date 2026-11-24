@@ -154,6 +154,19 @@ h2 {
   border-top: 1px solid var(--line);
 }
 
+.recruitment-notice {
+  margin: 0 0 24px;
+  border-inline-start: 3px solid #963b4b;
+  padding-inline-start: 16px;
+  overflow-wrap: anywhere;
+}
+
+.recruitment-notice strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #963b4b;
+}
+
 .profile-list div {
   display: grid;
   grid-template-columns: 150px 1fr;

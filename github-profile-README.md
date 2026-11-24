@@ -6,6 +6,10 @@ Researcher, College of Artificial Intelligence, Sichuan University
 
 ## Profile
 
+> **PhD Recruitment: Fall 2027**
+>
+> I am recruiting PhD students for Fall 2027 admission at Sichuan University. Prospective applicants are welcome to contact me at [wangyan93@scu.edu.cn](mailto:wangyan93@scu.edu.cn?subject=Fall%202027%20PhD%20Inquiry).
+
 Yan Wang is a Researcher at the College of Artificial Intelligence, Sichuan University. He received his PhD from the College of Computer Science, Sichuan University, and previously served as Scientist and Senior Scientist at the Agency for Science, Technology and Research (A*STAR), Singapore.
 
 His research focuses on medical image analysis, multimodal learning, domain generalization, foundation models, and hallucination detection for multimodal models, with applications in dermatology, ophthalmology, mammography, chest X-ray analysis, and other clinical imaging tasks.
@@ -126,4 +130,4 @@ His work has appeared in venues including The Lancet Digital Health, Medical Ima
 
 - GW Qian, L Zhang, **Y Wang**. [Conceptor-based deep neural networks](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=SpPZ8l4AAAAJ&citation_for_view=SpPZ8l4AAAAJ:ufrVoPGSRksC). *Sci. China Inf. Sci. 48 (5), 511-520, 2018.*
 
-Last updated November 20, 2026.
+Last updated November 24, 2026.
